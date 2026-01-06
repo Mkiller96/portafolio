@@ -1,0 +1,32 @@
+<!-- htmlhint doctype-first:false -->
+{% extends "base.html" %}
+
+{% block title %}Portafolio - Mi Portafolio{% endblock %}
+
+{% block content %}
+<section class="portfolio">
+    <h1>Mi portafolio</h1>
+    <p class="subtitle">Una selección de mis proyectos y trabajos recientes</p>
+
+    <div class="portfolio-grid">
+        {% for project in projects %}
+        <div class="portfolio-card">
+            <div class="card-content">
+                <h2>{{ project.title }}</h2>
+                <p>{{ project.description }}</p>
+                <a href="{{ project.link }}" class="btn btn-secondary">Ver proyecto</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <section class="portfolio-additional">
+        <h2>Más proyectos</h2>
+        <p>Visita mi GitHub para ver más proyectos y contribuciones:</p>
+        <a href="https://github.com/tu-usuario" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Visitar GitHub
+        </a>
+    </section>
+</section>
+{% endblock %}
+

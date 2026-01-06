@@ -1,0 +1,63 @@
+<!-- htmlhint doctype-first:false -->
+{% extends "base.html" %}
+
+{% block title %}Sobre mí - Mi Portafolio{% endblock %}
+
+{% block content %}
+<section class="about">
+    <h1>Sobre mí</h1>
+
+    <div class="about-content">
+        <div class="about-text">
+            <h2>Quién soy</h2>
+            <p>
+                Soy una persona apasionada por el desarrollo, con un gran interés en crear aplicaciones web
+                bonitas y funcionales. Con experiencia tanto en frontend como en backend,
+                me encanta convertir ideas en soluciones reales.
+            </p>
+            <p>
+                Mi camino en la tecnología empezó por curiosidad sobre cómo funcionan las cosas,
+                y ha evolucionado hacia una carrera enfocada en construir soluciones
+                que aporten valor.
+            </p>
+
+            <div class="about-actions">
+                <p>
+                    Por privacidad, mi CV está disponible bajo solicitud.
+                </p>
+                <a class="btn btn-secondary" href="{{ url_for('contact') }}">
+                    Contáctame
+                </a>
+            </div>
+
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML &amp; CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>Databases</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>Herramientas</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>VS Code</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

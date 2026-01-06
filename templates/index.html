@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Inicio - Mi Portafolio{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Bienvenido/a a mi portafolio</h1>
+    <p class="subtitle">Desarrollador/a Full Stack | Resolución creativa de problemas</p>
+    <a href="{{ url_for('portfolio') }}" class="btn btn-primary">Ver mis proyectos</a>
+</section>
+
+<section class="intro">
+    <h2>Proyectos destacados</h2>
+    <p>Explora algunos de mis trabajos y proyectos recientes</p>
+    <div class="projects-preview">
+        <div class="project-card">
+            <h3>Desarrollo web</h3>
+            <p>Creación de aplicaciones web modernas y responsivas con Flask, React y CSS moderno.</p>
+        </div>
+        <div class="project-card">
+            <h3>Diseño UI/UX</h3>
+            <p>Diseño de interfaces intuitivas y atractivas que resuelven problemas reales.</p>
+        </div>
+        <div class="project-card">
+            <h3>Desarrollo backend</h3>
+            <p>Desarrollo de sistemas backend robustos y escalables con Python y bases de datos.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
