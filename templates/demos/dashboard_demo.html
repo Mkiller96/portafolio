@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+
+{% block title %}Demo - Dashboard de Analíticas{% endblock %}
+
+{% block content %}
+<section class="demo-container">
+    <div class="demo-header">
+        <h1>Dashboard de Analíticas - Demo</h1>
+        <a href="/portfolio" class="btn btn-secondary">← Volver al portafolio</a>
+    </div>
+
+    <div class="demo-info">
+        <h2>Sobre este proyecto</h2>
+        <p>Sistema completo de dashboard con visualizaciones interactivas, análisis de datos y reportes de ventas en tiempo real.</p>
+        
+        <h3>Características principales:</h3>
+        <ul>
+            <li>Gráficos interactivos con Chart.js</li>
+            <li>Análisis de ventas por periodo</li>
+            <li>Reportes personalizables</li>
+            <li>Dashboard responsive</li>
+            <li>Generación de datos de prueba</li>
+        </ul>
+
+        <h3>Tecnologías utilizadas:</h3>
+        <div class="tech-tags">
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Chart.js</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">JavaScript</span>
+        </div>
+    </div>
+
+    <div class="demo-preview">
+        <h3>Funcionalidades del Dashboard</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h4>Gráficos Interactivos</h4>
+                <p>Visualizaciones dinámicas con Chart.js para análisis en tiempo real</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h4>Análisis de Tendencias</h4>
+                <p>Seguimiento de ventas mensuales y predicción de tendencias</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4>Top Productos</h4>
+                <p>Ranking de productos más vendidos por categoría</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h4>Reportes Detallados</h4>
+                <p>Informes completos de ventas con estadísticas descriptivas</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Tipos de visualizaciones</h3>
+        <div class="charts-showcase">
+            <div class="chart-preview">
+                <div class="chart-icon">📊</div>
+                <h4>Gráficos de Barras</h4>
+                <p>Comparación de ventas por producto y categoría</p>
+            </div>
+            <div class="chart-preview">
+                <div class="chart-icon">📈</div>
+                <h4>Gráficos de Línea</h4>
+                <p>Tendencias de ingresos a lo largo del tiempo</p>
+            </div>
+            <div class="chart-preview">
+                <div class="chart-icon">🥧</div>
+                <h4>Gráficos Circulares</h4>
+                <p>Distribución de ventas por categoría</p>
+            </div>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-box">
+                <div class="stat-number">$124,567</div>
+                <div class="stat-label">Ingresos Totales</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">1,234</div>
+                <div class="stat-label">Transacciones</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">87</div>
+                <div class="stat-label">Productos</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">+23%</div>
+                <div class="stat-label">Crecimiento</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-links">
+        <a href="{{ external_link }}" class="btn btn-primary" target="_blank">Ver proyecto completo</a>
+        <a href="/portfolio" class="btn btn-secondary">← Volver al portafolio</a>
+    </div>
+
+    <div class="demo-note">
+        <p><strong>Nota:</strong> Este proyecto está desplegado en producción y puedes verlo en funcionamiento haciendo clic en "Ver proyecto completo".</p>
+        <p>También puedes ver el código fuente en GitHub para ejecutarlo localmente:</p>
+        <pre>cd dashboard_django
+python manage.py migrate
+python manage.py generate_sample_data
+python manage.py runserver</pre>
+    </div>
+</section>
+
+<style>
+.demo-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.demo-info {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.demo-info h3 {
+    margin-top: 1.5rem;
+    color: #333;
+}
+
+.demo-info ul {
+    margin-left: 2rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.demo-preview {
+    margin-bottom: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.charts-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.chart-preview {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.chart-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.chart-preview h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.chart-preview p {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.demo-images {
+    background: #e9ecef;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.demo-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.demo-placeholder {
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.demo-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.demo-note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.demo-note pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+</style>
+{% endblock %}

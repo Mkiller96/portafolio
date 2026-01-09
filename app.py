@@ -3,6 +3,10 @@ import os
 
 app = Flask(__name__)
 
+# URLs de los proyectos (usar variables de entorno en producción)
+DASHBOARD_URL = os.getenv('DASHBOARD_URL', 'http://localhost:8000')
+PDF_TOOLS_URL = os.getenv('PDF_TOOLS_URL', 'http://localhost:5001')
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -14,16 +18,39 @@ def about():
 @app.route('/portfolio')
 def portfolio():
     projects = [
-        {'title': 'Proyecto 1', 'description': 'Descripción de tu primer proyecto', 'link': '#'},
-        {'title': 'Proyecto 2', 'description': 'Descripción de tu segundo proyecto', 'link': '#'},
-        {'title': 'Proyecto 3', 'description': 'Descripción de tu tercer proyecto', 'link': '#'}
+        {
+            'title': 'Dashboard de Analíticas', 
+            'description': 'Sistema de dashboard con visualizaciones de datos, reportes de ventas y análisis en tiempo real. Construido con Django y Chart.js.', 
+            'link': '/demo/dashboard',
+            'external_link': DASHBOARD_URL,
+            'image': '/static/images/dashboard-preview.png',
+            'tech': ['Django', 'Chart.js', 'SQLite', 'Bootstrap']
+        },
+        {
+            'title': 'PDF Tools SaaS', 
+            'description': 'Herramientas en línea para procesar PDFs: comprimir, dividir, fusionar, convertir a imágenes y viceversa. Plataforma SaaS con sistema de pagos.', 
+            'link': '/demo/pdf-tools',
+            'external_link': PDF_TOOLS_URL,
+            'image': '/static/images/pdf-tools-preview.png',
+            'tech': ['Flask', 'PyPDF2', 'Pillow', 'Stripe API']
+        }
     ]
     return render_template('portfolio.html', projects=projects)
+
+@app.route('/demo/dashboard')
+def demo_dashboard():
+    return render_template('demos/dashboard_demo.html', external_link=DASHBOARD_URL)
+
+@app.route('/demo/pdf-tools')
+def demo_pdf_tools():
+    return render_template('demos/pdf_tools_demo.html', external_link=PDF_TOOLS_URL)
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
+    # Desarrollo local con debug, producción sin debug
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)

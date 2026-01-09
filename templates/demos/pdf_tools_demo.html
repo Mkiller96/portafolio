@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+
+{% block title %}Demo - PDF Tools SaaS{% endblock %}
+
+{% block content %}
+<section class="demo-container">
+    <div class="demo-header">
+        <h1>PDF Tools SaaS - Demo</h1>
+        <a href="/portfolio" class="btn btn-secondary">← Volver al portafolio</a>
+    </div>
+
+    <div class="demo-info">
+        <h2>Sobre este proyecto</h2>
+        <p>Plataforma SaaS completa para procesamiento de archivos PDF con múltiples herramientas y sistema de pagos integrado.</p>
+        
+        <h3>Características principales:</h3>
+        <ul>
+            <li>Comprimir archivos PDF</li>
+            <li>Dividir PDFs en páginas individuales</li>
+            <li>Fusionar múltiples PDFs en uno solo</li>
+            <li>Convertir PDF a imágenes (JPG, PNG)</li>
+            <li>Convertir imágenes a PDF</li>
+            <li>Sistema de autenticación de usuarios</li>
+            <li>Integración con Stripe para pagos</li>
+            <li>Diferentes planes de suscripción</li>
+        </ul>
+
+        <h3>Tecnologías utilizadas:</h3>
+        <div class="tech-tags">
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PyPDF2</span>
+            <span class="tech-tag">Pillow</span>
+            <span class="tech-tag">Stripe API</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">Bootstrap</span>
+        </div>
+    </div>
+
+    <div class="demo-preview">
+        <h3>Herramientas disponibles</h3>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">📄</div>
+                <h4>Comprimir PDF</h4>
+                <p>Reduce el tamaño de archivos PDF manteniendo la calidad</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">✂️</div>
+                <h4>Dividir PDF</h4>
+                <p>Separa un PDF en páginas individuales</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🔗</div>
+                <h4>Fusionar PDF</h4>
+                <p>Combina múltiples PDFs en un solo archivo</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🖼️</div>
+                <h4>PDF a Imágenes</h4>
+                <p>Convierte páginas PDF a JPG o PNG</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">📸</div>
+                <h4>Imágenes a PDF</h4>
+                <p>Crea un PDF desde múltiples imágenes</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Planes de suscripción</h3>
+        <div class="pricing-preview">
+            <div class="price-card">
+                <h4>Gratis</h4>
+                <div class="price">$0<span>/mes</span></div>
+                <ul>
+                    <li>5 operaciones por día</li>
+                    <li>Archivos hasta 5MB</li>
+                    <li>Herramientas básicas</li>
+                </ul>
+            </div>
+            <div class="price-card featured">
+                <h4>Premium</h4>
+                <div class="price">$9.99<span>/mes</span></div>
+                <ul>
+                    <li>Operaciones ilimitadas</li>
+                    <li>Archivos hasta 100MB</li>
+                    <li>Todas las herramientas</li>
+                    <li>Procesamiento prioritario</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h4>Empresarial</h4>
+                <div class="price">$49.99<span>/mes</span></div>
+                <ul>
+                    <li>Todo de Premium</li>
+                    <li>API personalizada</li>
+                    <li>Soporte prioritario</li>
+                    <li>Sin límite de tamaño</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-links">
+        <a href="{{ external_link }}" class="btn btn-primary" target="_blank">Ver proyecto completo</a>
+        <a href="/portfolio" class="btn btn-secondary">← Volver al portafolio</a>
+    </div>
+
+    <div class="demo-note">
+        <p><strong>Nota:</strong> Este proyecto está desplegado en producción y puedes verlo en funcionamiento haciendo clic en "Ver proyecto completo".</p>
+        <p>También puedes ver el código fuente en GitHub para ejecutarlo localmente:</p>
+        <pre>cd pdf_tools_saas
+python app.py</pre>
+    </div>
+</section>
+
+<style>
+.demo-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.demo-info {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.demo-info h3 {
+    margin-top: 1.5rem;
+    color: #333;
+}
+
+.demo-info ul {
+    margin-left: 2rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.demo-preview {
+    margin-bottom: 2rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.tool-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.tool-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tool-card h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.tool-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.pricing-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.price-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.price-card.featured {
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+}
+
+.price-card h4 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 1rem 0;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #666;
+    font-weight: normal;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.price-card ul li {
+    padding: 0.5rem 0;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+.price-card ul li:last-child {
+    border-bottom: none;
+}
+
+.demo-images {
+    background: #e9ecef;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.demo-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.demo-placeholder {
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.demo-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.demo-note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.demo-note pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+</style>
+{% endblock %}
