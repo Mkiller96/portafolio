@@ -4,6 +4,7 @@ import os
 app = Flask(__name__)
 
 # URLs de los proyectos (usar variables de entorno en producción)
+
 DASHBOARD_URL = os.getenv('DASHBOARD_URL', 'http://localhost:8000')
 PDF_TOOLS_URL = os.getenv('PDF_TOOLS_URL', 'http://localhost:5001')
 
