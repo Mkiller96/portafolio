@@ -50,6 +50,17 @@ def demo_pdf_tools():
 def contact():
     return render_template('contact.html')
 
+@app.route('/debug')
+def debug():
+    """Ruta de diagnóstico para verificar variables de entorno"""
+    return f"""
+    <h1>Variables de Entorno</h1>
+    <p><strong>DASHBOARD_URL:</strong> {DASHBOARD_URL}</p>
+    <p><strong>PDF_TOOLS_URL:</strong> {PDF_TOOLS_URL}</p>
+    <hr>
+    <p>Si ves 'localhost', las variables NO están configuradas en Render.</p>
+    """
+
 if __name__ == '__main__':
     # Desarrollo local con debug, producción sin debug
     debug_mode = os.environ.get('FLASK_ENV') == 'development'
